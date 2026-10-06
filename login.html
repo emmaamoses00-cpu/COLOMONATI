@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login - LinkMart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <span class="logo-icon">🛍️</span>
+
+            <div>
+                <strong>LinkMart</strong>
+
+                <small>
+                    Connect. Sell. Earn.
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button
+                class="login-btn"
+                onclick="window.location.href='index.html'">
+
+                Home
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- LOGIN -->
+
+    <main class="login-page">
+
+        <div class="login-container">
+
+            <div class="login-heading">
+
+                <p class="eyebrow">
+                    WELCOME BACK
+                </p>
+
+                <h1>
+                    Login to LinkMart
+                </h1>
+
+                <p>
+                    Access your LinkMart account.
+                </p>
+
+            </div>
+
+
+
+            <div class="login-box">
+
+                <form id="loginForm" autocomplete="on">
+
+
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            <input
+    type="email"
+    id="loginEmail"
+    name="email"
+    autocomplete="username"
+    placeholder="Enter your email"
+    required
+>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <input
+                            <input
+    type="password"
+    id="loginPassword"
+    name="password"
+    autocomplete="current-password"
+    placeholder="Enter your password"
+    required
+>
+
+                    </div>
+
+
+
+                    <div class="login-options">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe">
+
+                            Remember me
+
+                        </label>
+
+
+                        <a href="#">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="create-account-btn">
+
+                        Login →
+
+                    </button>
+
+
+                </form>
+
+
+
+                <div class="login-divider">
+
+                    <span>
+                        Don't have an account?
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="signup-link-btn"
+                    onclick="window.location.href='signup.html'">
+
+                    Create a LinkMart Account
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <h2>
+                🛍️ LinkMart
+            </h2>
+
+            <p>
+                Connect. Sell. Earn.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

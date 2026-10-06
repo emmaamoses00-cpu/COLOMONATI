@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Supplier Dashboard - LinkMart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="dashboard-header">
+
+    <div class="logo">
+        <span class="logo-icon">🛍️</span>
+
+        <div>
+            <strong>LinkMart</strong>
+            <small>Supplier Portal</small>
+        </div>
+    </div>
+
+    <div class="dashboard-user">
+        <span>🏪</span>
+        <strong>Supplier</strong>
+
+        <button onclick="window.location.href='index.html'">
+            Logout
+        </button>
+    </div>
+
+</header>
+
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <a class="active" href="#">
+            📊 Dashboard
+        </a>
+
+        <a href="#">
+            📦 My Products
+        </a>
+
+        <a href="#">
+            ➕ Add Product
+        </a>
+
+        <a href="#">
+            🛒 Orders
+        </a>
+
+        <a href="#">
+            💰 Sales
+        </a>
+
+        <a href="#">
+            👥 Customers
+        </a>
+
+        <a href="#">
+            ⚙️ Settings
+        </a>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <div class="dashboard-title">
+
+            <div>
+                <p class="eyebrow">SUPPLIER DASHBOARD</p>
+
+                <h1>
+                    Welcome, Supplier 👋
+                </h1>
+
+                <p>
+                    Manage your products, orders and business.
+                </p>
+            </div>
+
+            <button
+                class="primary-dashboard-btn"
+                onclick="alert('Product upload system coming next!')">
+
+                + Add Product
+
+            </button>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <span>📦</span>
+                <p>Total Products</p>
+                <h2>24</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>🛒</span>
+                <p>Orders</p>
+                <h2>86</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>💰</span>
+                <p>Total Sales</p>
+                <h2>$4,820</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>⭐</span>
+                <p>Rating</p>
+                <h2>4.8</h2>
+            </div>
+
+        </div>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Recent Products</h2>
+
+                    <p>
+                        Products currently listed on LinkMart.
+                    </p>
+                </div>
+
+                <button
+                    onclick="alert('Product management coming next!')">
+
+                    View All
+
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-products">
+
+                <div class="mini-product">
+                    <div class="mini-product-image">🎧</div>
+
+                    <h3>Wireless Earbuds</h3>
+
+                    <p>Wholesale: $18</p>
+
+                    <strong>In Stock</strong>
+                </div>
+
+
+                <div class="mini-product">
+                    <div class="mini-product-image">👟</div>
+
+                    <h3>Sports Shoes</h3>
+
+                    <p>Wholesale: $25</p>
+
+                    <strong>In Stock</strong>
+                </div>
+
+
+                <div class="mini-product">
+                    <div class="mini-product-image">⌚</div>
+
+                    <h3>Smart Watch</h3>
+
+                    <p>Wholesale: $32</p>
+
+                    <strong>In Stock</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Recent Orders</h2>
+
+                    <p>
+                        Your latest marketplace orders.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="orders-table">
+
+                <div class="order-row order-heading">
+
+                    <span>Order</span>
+                    <span>Product</span>
+                    <span>Amount</span>
+                    <span>Status</span>
+
+                </div>
+
+
+                <div class="order-row">
+
+                    <span>#LM1001</span>
+                    <span>Wireless Earbuds</span>
+                    <span>$180</span>
+                    <strong>Delivered</strong>
+
+                </div>
+
+
+                <div class="order-row">
+
+                    <span>#LM1002</span>
+                    <span>Sports Shoes</span>
+                    <span>$250</span>
+                    <strong>Processing</strong>
+
+                </div>
+
+
+                <div class="order-row">
+
+                    <span>#LM1003</span>
+                    <span>Smart Watch</span>
+                    <span>$320</span>
+                    <strong>Shipped</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

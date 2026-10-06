@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Join LinkMart</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <span class="logo-icon">🛍️</span>
+
+            <div>
+
+                <strong>LinkMart</strong>
+
+                <small>
+                    Connect. Sell. Earn.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button class="login-btn"
+                    onclick="window.location.href='index.html'">
+
+                Home
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================================
+         SIGNUP SECTION
+    ================================= -->
+
+    <main class="signup-page">
+
+
+        <div class="signup-container">
+
+
+            <!-- TITLE -->
+
+            <div class="signup-heading">
+
+                <p class="eyebrow">
+                    JOIN LINKMART
+                </p>
+
+                <h1>
+                    Create Your Account
+                </h1>
+
+                <p>
+                    Choose how you want to use LinkMart.
+                </p>
+
+            </div>
+
+
+
+            <!-- ACCOUNT TYPES -->
+
+            <div class="account-types">
+
+
+                <!-- SUPPLIER -->
+
+                <div class="account-card"
+                     onclick="selectAccount('supplier')">
+
+                    <div class="account-icon">
+                        🏪
+                    </div>
+
+                    <h2>
+                        Supplier
+                    </h2>
+
+                    <p>
+                        Sell your products to
+                        traders, affiliates and customers.
+                    </p>
+
+                    <span>
+                        Sell Products →
+                    </span>
+
+                </div>
+
+
+
+                <!-- AFFILIATE -->
+
+                <div class="account-card"
+                     onclick="selectAccount('affiliate')">
+
+                    <div class="account-icon">
+                        🔗
+                    </div>
+
+                    <h2>
+                        Affiliate Marketer
+                    </h2>
+
+                    <p>
+                        Promote products and earn
+                        commissions from successful sales.
+                    </p>
+
+                    <span>
+                        Promote & Earn →
+                    </span>
+
+                </div>
+
+
+
+                <!-- TRADER -->
+
+                <div class="account-card"
+                     onclick="selectAccount('trader')">
+
+                    <div class="account-icon">
+                        📦
+                    </div>
+
+                    <h2>
+                        Trader / Reseller
+                    </h2>
+
+                    <p>
+                        Find wholesale products and
+                        resell them for profit.
+                    </p>
+
+                    <span>
+                        Find Products →
+                    </span>
+
+                </div>
+
+
+
+                <!-- CUSTOMER -->
+
+                <div class="account-card"
+                     onclick="selectAccount('customer')">
+
+                    <div class="account-icon">
+                        🛒
+                    </div>
+
+                    <h2>
+                        Customer
+                    </h2>
+
+                    <p>
+                        Discover products and
+                        shop from trusted sellers.
+                    </p>
+
+                    <span>
+                        Start Shopping →
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- REGISTRATION FORM -->
+
+            <div id="registrationForm"
+                 class="registration-form">
+
+
+                <div class="form-header">
+
+                    <h2>
+                        Create Your Account
+                    </h2>
+
+                    <p id="selectedAccount">
+                        Select an account type above.
+                    </p>
+
+                </div>
+
+
+
+                <form id="signupForm">
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                placeholder="Enter your first name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                placeholder="Enter your last name"
+                                required>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="+256..."
+                            required>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create a password"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="terms">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required>
+
+                        <label for="terms">
+
+                            I agree to the LinkMart
+                            Terms & Conditions.
+
+                        </label>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="create-account-btn">
+
+                        Create Account →
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <h2>
+                🛍️ LinkMart
+            </h2>
+
+            <p>
+                Connect. Sell. Earn.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Marketplace
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#products">
+                Products
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                LinkMart
+            </h3>
+
+            <p>
+                Connect suppliers,
+                traders and marketers.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="signup.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Affiliate Dashboard - LinkMart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="dashboard-header">
+
+    <div class="logo">
+        <span class="logo-icon">🛍️</span>
+
+        <div>
+            <strong>LinkMart</strong>
+            <small>Affiliate Portal</small>
+        </div>
+    </div>
+
+    <div class="dashboard-user">
+
+        <span>🔗</span>
+
+        <strong>Affiliate</strong>
+
+        <button onclick="window.location.href='index.html'">
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <a class="active" href="#">
+            📊 Dashboard
+        </a>
+
+        <a href="#">
+            🔗 My Links
+        </a>
+
+        <a href="#">
+            🛍️ Products
+        </a>
+
+        <a href="#">
+            📈 Performance
+        </a>
+
+        <a href="#">
+            💰 Commissions
+        </a>
+
+        <a href="#">
+            💳 Withdrawals
+        </a>
+
+        <a href="#">
+            ⚙️ Settings
+        </a>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <div class="dashboard-title">
+
+            <div>
+
+                <p class="eyebrow">
+                    AFFILIATE DASHBOARD
+                </p>
+
+                <h1>
+                    Grow Your Earnings 🚀
+                </h1>
+
+                <p>
+                    Promote products and earn commissions.
+                </p>
+
+            </div>
+
+            <button
+                class="primary-dashboard-btn"
+                onclick="window.location.href='index.html#products'">
+
+                Find Products
+
+            </button>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>👆</span>
+
+                <p>Total Clicks</p>
+
+                <h2>1,248</h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>🛒</span>
+
+                <p>Sales</p>
+
+                <h2>86</h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>💰</span>
+
+                <p>Total Earnings</p>
+
+                <h2>$426</h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>💳</span>
+
+                <p>Available</p>
+
+                <h2>$286</h2>
+
+            </div>
+
+        </div>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Your Top Products
+                    </h2>
+
+                    <p>
+                        Products generating the most activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-products">
+
+
+                <div class="mini-product">
+
+                    <div class="mini-product-image">
+                        🎧
+                    </div>
+
+                    <h3>
+                        Wireless Earbuds
+                    </h3>
+
+                    <p>
+                        Commission: $6.99
+                    </p>
+
+                    <button class="small-blue-btn"
+                            onclick="copyAffiliateLink('earbuds')">
+
+                        Get Affiliate Link
+
+                    </button>
+
+                </div>
+
+
+                <div class="mini-product">
+
+                    <div class="mini-product-image">
+                        👟
+                    </div>
+
+                    <h3>
+                        Sports Shoes
+                    </h3>
+
+                    <p>
+                        Commission: $8.50
+                    </p>
+
+                    <button class="small-blue-btn"
+                            onclick="copyAffiliateLink('shoes')">
+
+                        Get Affiliate Link
+
+                    </button>
+
+                </div>
+
+
+                <div class="mini-product">
+
+                    <div class="mini-product-image">
+                        ⌚
+                    </div>
+
+                    <h3>
+                        Smart Watch
+                    </h3>
+
+                    <p>
+                        Commission: $10.00
+                    </p>
+
+                    <button class="small-blue-btn"
+                            onclick="copyAffiliateLink('watch')">
+
+                        Get Affiliate Link
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Recent Commissions
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="orders-table">
+
+                <div class="order-row order-heading">
+
+                    <span>Product</span>
+                    <span>Sale</span>
+                    <span>Commission</span>
+                    <span>Status</span>
+
+                </div>
+
+
+                <div class="order-row">
+
+                    <span>Wireless Earbuds</span>
+                    <span>$25</span>
+                    <span>$6.99</span>
+                    <strong>Approved</strong>
+
+                </div>
+
+
+                <div class="order-row">
+
+                    <span>Sports Shoes</span>
+                    <span>$40</span>
+                    <span>$8.50</span>
+                    <strong>Pending</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+
+function copyAffiliateLink(product) {
+
+    const link =
+        "https://linkmart.example/product/" +
+        product +
+        "?ref=affiliate001";
+
+    navigator.clipboard.writeText(link);
+
+    alert(
+        "Affiliate link copied!\n\n" + link
+    );
+
+}
+
+</script>
+
+</body>
+</html>

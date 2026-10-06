@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Trader Dashboard - LinkMart</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="dashboard-header">
+
+    <div class="logo">
+
+        <span class="logo-icon">
+            🛍️
+        </span>
+
+        <div>
+
+            <strong>
+                LinkMart
+            </strong>
+
+            <small>
+                Trader Portal
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-user">
+
+        <span>📦</span>
+
+        <strong>
+            Trader
+        </strong>
+
+        <button
+            onclick="window.location.href='index.html'">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<div class="dashboard-layout">
+
+
+<aside class="sidebar">
+
+    <a class="active" href="#">
+        📊 Dashboard
+    </a>
+
+    <a href="#">
+        🔎 Find Products
+    </a>
+
+    <a href="#">
+        ❤️ Saved Products
+    </a>
+
+    <a href="#">
+        📦 My Orders
+    </a>
+
+    <a href="#">
+        👥 Suppliers
+    </a>
+
+    <a href="#">
+        💰 Profit Calculator
+    </a>
+
+    <a href="#">
+        ⚙️ Settings
+    </a>
+
+</aside>
+
+
+
+<main class="dashboard-main">
+
+
+<div class="dashboard-title">
+
+    <div>
+
+        <p class="eyebrow">
+            TRADER DASHBOARD
+        </p>
+
+        <h1>
+            Find Products & Grow Your Profit 📦
+        </h1>
+
+        <p>
+            Discover wholesale opportunities from suppliers.
+        </p>
+
+    </div>
+
+
+    <button
+        class="primary-dashboard-btn"
+        onclick="window.location.href='index.html#products'">
+
+        Browse Products
+
+    </button>
+
+</div>
+
+
+
+<div class="stats-grid">
+
+
+    <div class="stat-card">
+
+        <span>📦</span>
+
+        <p>
+            Saved Products
+        </p>
+
+        <h2>
+            18
+        </h2>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <span>🛒</span>
+
+        <p>
+            Orders
+        </p>
+
+        <h2>
+            12
+        </h2>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <span>💰</span>
+
+        <p>
+            Potential Profit
+        </p>
+
+        <h2>
+            $820
+        </h2>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <span>👥</span>
+
+        <p>
+            Suppliers
+        </p>
+
+        <h2>
+            9
+        </h2>
+
+    </div>
+
+
+</div>
+
+
+
+<section class="dashboard-section">
+
+
+<div class="section-heading">
+
+    <div>
+
+        <h2>
+            Wholesale Opportunities
+        </h2>
+
+        <p>
+            Products you could buy and resell.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<div class="dashboard-products">
+
+
+<div class="mini-product">
+
+    <div class="mini-product-image">
+        🎧
+    </div>
+
+    <h3>
+        Wireless Earbuds
+    </h3>
+
+    <p>
+        Wholesale: $18
+    </p>
+
+    <p>
+        Suggested sale: $25
+    </p>
+
+    <strong>
+        Potential profit: $7
+    </strong>
+
+</div>
+
+
+
+<div class="mini-product">
+
+    <div class="mini-product-image">
+        👟
+    </div>
+
+    <h3>
+        Sports Shoes
+    </h3>
+
+    <p>
+        Wholesale: $25
+    </p>
+
+    <p>
+        Suggested sale: $40
+    </p>
+
+    <strong>
+        Potential profit: $15
+    </strong>
+
+</div>
+
+
+
+<div class="mini-product">
+
+    <div class="mini-product-image">
+        ⌚
+    </div>
+
+    <h3>
+        Smart Watch
+    </h3>
+
+    <p>
+        Wholesale: $32
+    </p>
+
+    <p>
+        Suggested sale: $49
+    </p>
+
+    <strong>
+        Potential profit: $17
+    </strong>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="dashboard-section">
+
+
+<div class="profit-box">
+
+    <h2>
+        💰 Quick Profit Calculator
+    </h2>
+
+    <p>
+        Calculate your potential resale profit.
+    </p>
+
+
+    <div class="calculator">
+
+        <input
+            type="number"
+            id="buyPrice"
+            placeholder="Wholesale price">
+
+
+        <input
+            type="number"
+            id="sellPrice"
+            placeholder="Selling price">
+
+
+        <button
+            onclick="calculateProfit()">
+
+            Calculate Profit
+
+        </button>
+
+    </div>
+
+
+    <h3 id="profitResult">
+        Your profit will appear here.
+    </h3>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+</div>
+
+
+
+<script>
+
+function calculateProfit() {
+
+    const buy =
+        Number(
+            document.getElementById("buyPrice").value
+        );
+
+
+    const sell =
+        Number(
+            document.getElementById("sellPrice").value
+        );
+
+
+    const profit =
+        sell - buy;
+
+
+    document.getElementById(
+        "profitResult"
+    ).textContent =
+        "Potential profit: $" +
+        profit.toFixed(2);
+
+}
+
+</script>
+
+
+</body>
+
+</html>

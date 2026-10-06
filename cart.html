@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart | LinkMart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <span class="logo-icon">🛍️</span>
+
+            <div>
+                <strong>LinkMart</strong>
+                <small>Connect. Sell. Earn.</small>
+            </div>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                placeholder="Search products..."
+            >
+
+            <button>🔍</button>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button class="login-btn">
+                Login
+            </button>
+
+            <button class="signup-btn">
+                Sign Up
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="index.html#products">
+            Products
+        </a>
+
+        <a href="index.html#suppliers">
+            Suppliers
+        </a>
+
+        <a href="index.html#affiliates">
+            Affiliates
+        </a>
+
+        <a href="index.html#how-it-works">
+            How It Works
+        </a>
+
+    </nav>
+
+
+    <!-- CART -->
+
+    <main class="cart-page">
+
+        <div class="cart-container">
+
+            <div class="cart-heading">
+
+                <p class="eyebrow">
+                    YOUR SHOPPING BAG
+                </p>
+
+                <h1>
+                    Shopping Cart
+                </h1>
+
+            </div>
+
+
+            <!-- CART ITEMS -->
+
+            <div id="cartItems"
+                 class="cart-items">
+
+            </div>
+
+
+            <!-- EMPTY CART -->
+
+            <div id="emptyCart"
+                 class="empty-cart">
+
+                <div class="empty-cart-icon">
+                    🛒
+                </div>
+
+                <h2>
+                    Your cart is empty
+                </h2>
+
+                <p>
+                    Find products and add them
+                    to your shopping cart.
+                </p>
+
+                <a href="index.html#products"
+                   class="continue-shopping">
+
+                    Browse Products →
+
+                </a>
+
+            </div>
+
+
+            <!-- CART SUMMARY -->
+
+            <div id="cartSummary"
+                 class="cart-summary">
+
+                <h2>
+                    Order Summary
+                </h2>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Items
+                    </span>
+
+                    <strong id="cartItemCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="cartSubtotal">
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <strong>
+                        Calculated later
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="cartTotal">
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <button
+                    id="checkoutButton"
+                    class="checkout-btn">
+
+                    Proceed to Checkout →
+
+                </button>
+
+
+                <a href="index.html#products"
+                   class="continue-link">
+
+                    ← Continue Shopping
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <h2>
+                🛍️ LinkMart
+            </h2>
+
+            <p>
+                Connect. Sell. Earn.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Marketplace
+            </h3>
+
+            <a href="index.html#products">
+                Products
+            </a>
+
+            <a href="index.html#suppliers">
+                Suppliers
+            </a>
+
+            <a href="index.html#affiliates">
+                Affiliates
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Company
+            </h3>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                LinkMart
+            </h3>
+
+            <p>
+                Your marketplace for
+                products and opportunities.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <div class="copyright">
+
+        © 2026 LinkMart.
+        All rights reserved.
+
+    </div>
+
+
+    <script src="cart.js"></script>
+
+</body>
+
+</html>

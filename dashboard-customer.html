@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Customer Dashboard - LinkMart</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="dashboard-sidebar">
+
+        <div class="dashboard-logo">
+
+            🛍️
+
+            <strong>
+                LinkMart
+            </strong>
+
+            <small>
+                Connect. Sell. Earn.
+            </small>
+
+        </div>
+
+
+        <nav>
+
+            <a href="dashboard-customer.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="product.html">
+                🛍️ Browse Products
+            </a>
+
+            <a href="cart.html">
+                🛒 My Cart
+            </a>
+
+            <a href="#">
+                ❤️ Wishlist
+            </a>
+
+            <a href="#">
+                📦 My Orders
+            </a>
+
+            <a href="#">
+                👤 My Profile
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            class="logout-btn"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =====================================
+             TOP BAR
+        ====================================== -->
+
+        <header class="dashboard-topbar">
+
+            <div>
+
+                <h1>
+                    Welcome back 👋
+                </h1>
+
+                <p>
+                    Discover products and shop from trusted sellers.
+                </p>
+
+            </div>
+
+
+            <div class="customer-profile">
+
+                <div class="profile-circle">
+                    E
+                </div>
+
+                <span>
+                    Customer
+                </span>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================
+             SEARCH
+        ====================================== -->
+
+        <section class="dashboard-search">
+
+            <input
+                type="text"
+                id="customerSearch"
+                placeholder="Search products..."
+            >
+
+            <button
+                type="button"
+                id="customerSearchButton"
+            >
+                🔍 Search
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================
+             STATISTICS
+        ====================================== -->
+
+        <section class="dashboard-stats">
+
+
+            <div class="stat-card">
+
+                <span>
+                    🛒
+                </span>
+
+                <div>
+
+                    <h3 id="dashboardCartCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Cart Items
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    📦
+                </span>
+
+                <div>
+
+                    <h3>
+                        0
+                    </h3>
+
+                    <p>
+                        Orders
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    ❤️
+                </span>
+
+                <div>
+
+                    <h3>
+                        0
+                    </h3>
+
+                    <p>
+                        Wishlist
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    💰
+                </span>
+
+                <div>
+
+                    <h3>
+                        $0
+                    </h3>
+
+                    <p>
+                        Total Spent
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             PRODUCTS
+        ====================================== -->
+<section class="dashboard-products">
+
+    <div class="section-heading">
+
+        <div>
+
+            <h2>
+                Featured Products
+            </h2>
+
+            <p>
+                Discover products from COLOMONATI suppliers.
+            </p>
+
+        </div>
+
+        <a href="product.html">
+            View All →
+        </a>
+
+    </div>
+
+
+    <div
+        class="product-grid"
+        id="customerProductGrid"
+    >
+
+        <div class="product-loading">
+            Loading products...
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         DASHBOARD JAVASCRIPT
+    ========================================== -->
+<script> 
+    /* =========================================
+   COLOMONATI CUSTOMER DASHBOARD
+========================================= */
+
+
+/* =========================================
+   CART STORAGE
+========================================= */
+
+function getCart() {
+
+    return JSON.parse(
+        localStorage.getItem("linkmartCart")
+    ) || [];
+
+}
+
+
+/* =========================================
+   SAVE CART
+========================================= */
+
+function saveCart(cart) {
+
+    localStorage.setItem(
+        "linkmartCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+/* =========================================
+   UPDATE CART COUNT
+========================================= */
+
+function updateDashboardCartCount() {
+
+    const cart = getCart();
+
+    let totalItems = 0;
+
+    cart.forEach(function(item) {
+
+        totalItems +=
+            Number(item.quantity) || 0;
+
+    });
+
+    const cartCount =
+        document.querySelector(
+            "#dashboardCartCount"
+        );
+
+    if (cartCount) {
+
+        cartCount.textContent =
+            totalItems;
+
+    }
+
+}
+
+
+/* =========================================
+   LOAD PRODUCTS FROM BACKEND
+========================================= */
+
+async function loadCustomerProducts() {
+
+    const productGrid =
+        document.querySelector(
+            "#customerProductGrid"
+        );
+
+    if (!productGrid) return;
+
+
+    try {
+
+        const response =
+            await fetch(
+                "http://localhost:5000/api/products"
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Could not load products."
+            );
+
+        }
+
+
+        const products =
+            await response.json();
+
+
+        productGrid.innerHTML = "";
+
+
+        if (products.length === 0) {
+
+            productGrid.innerHTML = `
+                <div class="product-loading">
+                    No products available yet.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        products.forEach(function(product) {
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "product-card";
+
+
+            card.dataset.product =
+                product.name;
+
+
+            card.innerHTML = `
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        ${product.category || "Product"}
+                    </span>
+
+                    ${product.image || "🛍️"}
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h3>
+                        ${product.name}
+                    </h3>
+
+
+                    <p>
+                        ${product.description || "Quality product from a trusted seller."}
+                    </p>
+
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            $${Number(product.selling_price || product.wholesale_price).toFixed(2)}
+                        </strong>
+
+
+                        <button
+                            type="button"
+                            class="dashboard-add-cart"
+                            data-id="${product.id}"
+                        >
+                            🛒 Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            productGrid.appendChild(card);
+
+        });
+
+
+        connectCartButtons();
+
+
+    } catch (error) {
+
+        console.error(
+            "Product loading error:",
+            error
+        );
+
+
+        productGrid.innerHTML = `
+
+            <div class="product-loading">
+
+                ❌ Could not load products.
+
+                <br>
+
+                Please make sure the COLOMONATI server is running.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================
+   CONNECT ADD TO CART BUTTONS
+========================================= */
+
+function connectCartButtons() {
+
+    const buttons =
+        document.querySelectorAll(
+            ".dashboard-add-cart"
+        );
+
+
+    buttons.forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                const productId =
+                    button.dataset.id;
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            "http://localhost:5000/api/products/" +
+                            productId
+                        );
+
+
+                    const product =
+                        await response.json();
+
+
+                    if (!response.ok) {
+
+                        alert(
+                            "Could not load this product."
+                        );
+
+                        return;
+
+                    }
+
+
+                    let cart =
+                        getCart();
+
+
+                    const existingProduct =
+                        cart.find(
+                            function(item) {
+
+                                return (
+                                    item.productId ===
+                                    product.id
+                                );
+
+                            }
+                        );
+
+
+                    if (existingProduct) {
+
+                        existingProduct.quantity += 1;
+
+                    } else {
+
+                        cart.push({
+
+                            productId:
+                                product.id,
+
+                            name:
+                                product.name,
+
+                            category:
+                                product.category,
+
+                            image:
+                                product.image,
+
+                            price:
+                                Number(
+                                    product.selling_price ||
+                                    product.wholesale_price
+                                ),
+
+                            quantity:
+                                1
+
+                        });
+
+                    }
+
+
+                    saveCart(cart);
+
+                    updateDashboardCartCount();
+
+                    showDashboardCartSuccess(
+                        product.name
+                    );
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Add to cart error:",
+                        error
+                    );
+
+                    alert(
+                        "Could not add this product to your cart."
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+}
+
+
+/* =========================================
+   CART SUCCESS MODAL
+========================================= */
+
+function showDashboardCartSuccess(productName) {
+
+    const modal =
+        document.createElement("div");
+
+
+    modal.className =
+        "cart-success-overlay";
+
+
+    modal.innerHTML = `
+
+        <div class="cart-success-modal">
+
+            <button
+                type="button"
+                class="cart-success-close"
+                id="dashboardCartSuccessClose"
+            >
+                ×
+            </button>
+
+
+            <div class="cart-success-icon">
+                ✓
+            </div>
+
+
+            <h2>
+                Added to Cart
+            </h2>
+
+
+            <p>
+
+                <strong>
+                    ${productName}
+                </strong>
+
+                has been added to your cart successfully.
+
+            </p>
+
+
+            <div class="cart-success-actions">
+
+                <button
+                    type="button"
+                    class="continue-shopping-btn"
+                    id="dashboardContinueShopping"
+                >
+                    Continue Shopping
+                </button>
+
+
+                <button
+                    type="button"
+                    class="view-cart-btn"
+                    id="dashboardViewCart"
+                >
+                    View Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    document.body.appendChild(modal);
+
+
+    document
+        .querySelector(
+            "#dashboardCartSuccessClose"
+        )
+        .addEventListener(
+            "click",
+            function() {
+
+                modal.remove();
+
+            }
+        );
+
+
+    document
+        .querySelector(
+            "#dashboardContinueShopping"
+        )
+        .addEventListener(
+            "click",
+            function() {
+
+                modal.remove();
+
+            }
+        );
+
+
+    document
+        .querySelector(
+            "#dashboardViewCart"
+        )
+        .addEventListener(
+            "click",
+            function() {
+
+                window.location.href =
+                    "cart.html";
+
+            }
+        );
+
+
+    modal.addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === modal) {
+
+                modal.remove();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   SEARCH PRODUCTS
+========================================= */
+
+const searchButton =
+    document.querySelector(
+        "#customerSearchButton"
+    );
+
+
+const searchInput =
+    document.querySelector(
+        "#customerSearch"
+    );
+
+
+function performSearch() {
+
+    const search =
+        searchInput.value.trim();
+
+
+    if (search === "") {
+
+        searchInput.focus();
+
+        return;
+
+    }
+
+
+    window.location.href =
+        "product.html?search=" +
+        encodeURIComponent(search);
+
+}
+
+
+if (searchButton) {
+
+    searchButton.addEventListener(
+        "click",
+        function(event) {
+
+            event.preventDefault();
+
+            performSearch();
+
+        }
+    );
+
+}
+
+
+if (searchInput) {
+
+    searchInput.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                event.preventDefault();
+
+                performSearch();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   INITIALIZE DASHBOARD
+========================================= */
+
+updateDashboardCartCount();
+
+loadCustomerProducts();
+</script>
+
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+
+<a
+    href="https://wa.me/211927712527?text=Hello%20LinkMart%2C%20I%20need%20help%20with%20a%20product."
+    class="floating-whatsapp"
+    target="_blank"
+    aria-label="Chat with us on WhatsApp">
+
+    💬
+
+</a>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>COLOMONATI | Shop. Connect. Grow.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="logo">
+            <span class="logo-icon">🛍️</span>
+
+            <div>
+                <strong>COLOMONATI</strong>
+                <small>Shop. Connect. Grow.</small>
+            </div>
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for products, suppliers or categories..."
+            >
+
+            <button
+                type="button"
+                id="searchButton">
+                🔍
+            </button>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="login-btn"
+                onclick="window.location.href='login.html'">
+                Login
+            </button>
+
+            <button
+                type="button"
+                class="signup-btn"
+                onclick="window.location.href='signup.html'">
+                Sign Up
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav class="navbar">
+
+        <a href="#home">Home</a>
+
+        <a href="#products">Products</a>
+
+        <a href="#suppliers">Suppliers</a>
+
+        <a href="#affiliates">Affiliates</a>
+
+        <a href="#how-it-works">How It Works</a>
+
+        <a href="#about">About</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                ONE MARKETPLACE. MANY OPPORTUNITIES.
+            </p>
+
+
+            <h1>
+                Connect.
+                <span>Sell.</span>
+                Grow.
+            </h1>
+
+
+            <p class="hero-text">
+
+                Connect with trusted wholesale suppliers,
+                discover products and grow your business
+                through affiliate marketing, trading
+                and reselling.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="joinButton">
+                    Join COLOMONATI →
+                </button>
+
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="browseButton">
+                    Browse Products
+                </button>
+
+            </div>
+
+
+            <div class="trust-points">
+
+                <div>
+                    <strong>✓</strong>
+                    Verified Suppliers
+                </div>
+
+
+                <div>
+                    <strong>✓</strong>
+                    Secure Marketplace
+                </div>
+
+
+                <div>
+                    <strong>✓</strong>
+                    Business Opportunities
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO PRODUCT -->
+
+        <div class="hero-card">
+
+            <div class="hero-card-top">
+                <span>🔥 Trending Opportunity</span>
+            </div>
+
+
+            <div class="hero-product">
+
+                <div class="fake-product-image">
+                    🎧
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Wireless Earbuds
+                    </h3>
+
+                    <p>
+                        Wholesale from $18
+                    </p>
+
+
+                    <span class="profit">
+                        Potential margin: $6.99
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="hero-product-btn">
+                Explore Opportunity
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
+
+    <section class="categories-section">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">
+                EXPLORE
+            </p>
+
+            <h2>
+                Shop by Category
+            </h2>
+
+        </div>
+
+
+        <div class="categories">
+
+            <button
+                type="button"
+                class="category-btn"
+                data-category="Electronics">
+
+                💻
+
+                <span>
+                    Electronics
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="category-btn"
+                data-category="Fashion">
+
+                👕
+
+                <span>
+                    Fashion
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="category-btn"
+                data-category="Beauty">
+
+                💄
+
+                <span>
+                    Beauty
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="category-btn"
+                data-category="Home">
+
+                🏠
+
+                <span>
+                    Home & Living
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="category-btn"
+                data-category="Sports">
+
+                ⚽
+
+                <span>
+                    Sports
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="category-btn"
+                data-category="Agriculture">
+
+                🌱
+
+                <span>
+                    Agriculture
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURED PRODUCTS
+    ========================== -->
+
+    <section
+        class="products-section"
+        id="products">
+
+
+        <div class="section-heading products-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    DISCOVER PRODUCTS
+                </p>
+
+
+                <h2>
+                    Featured Products
+                </h2>
+
+
+                <p>
+                    Products from our marketplace partners.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="view-all-btn"
+                id="viewAllButton">
+
+                View All →
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="products-grid"
+            id="productsGrid">
+
+
+            <!-- =========================
+                 PRODUCT 1
+            ========================== -->
+
+            <div
+                class="product-card"
+                data-category="Electronics"
+                data-name="Wireless Earbuds">
+
+
+                <div class="product-inner">
+
+
+                    <!-- FRONT -->
+
+                    <div class="product-front">
+
+                        <span class="badge green">
+                            Bestseller
+                        </span>
+
+
+                        <div class="product-image">
+                            🎧
+                        </div>
+
+
+                        <h3>
+                            Wireless Earbuds
+                        </h3>
+
+
+                        <p>
+                            Electronics
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="flip-btn">
+
+                            ↻ Flip for Price
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- BACK -->
+
+                    <div class="product-back">
+
+                        <span class="badge green">
+                            Wholesale
+                        </span>
+
+
+                        <h3>
+                            Wireless Earbuds
+                        </h3>
+
+
+                        <div class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+
+
+                        <p>
+                            Wireless Bluetooth earbuds
+                            with charging case.
+                        </p>
+
+
+                        <div class="price">
+                            $24.99
+                        </div>
+
+
+                        <small>
+                            Wholesale available
+                        </small>
+
+
+                        <button
+                            type="button"
+                            class="product-btn">
+
+                            View Product →
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="flip-back">
+
+                            ↩ Back
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PRODUCT 2
+            ========================== -->
+
+            <div
+                class="product-card"
+                data-category="Fashion"
+                data-name="Running Shoes">
+
+
+                <div class="product-inner">
+
+
+                    <div class="product-front">
+
+                        <span class="badge orange">
+                            Hot Deal
+                        </span>
+
+
+                        <div class="product-image">
+                            👟
+                        </div>
+
+
+                        <h3>
+                            Running Shoes
+                        </h3>
+
+
+                        <p>
+                            Fashion
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="flip-btn">
+
+                            ↻ Flip for Price
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-back">
+
+                        <span class="badge orange">
+                            Hot Deal
+                        </span>
+
+
+                        <h3>
+                            Running Shoes
+                        </h3>
+
+
+                        <div class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+
+
+                        <p>
+                            Comfortable running shoes
+                            for everyday use.
+                        </p>
+
+
+                        <div class="price">
+                            $32.50
+                        </div>
+
+
+                        <small>
+                            Wholesale available
+                        </small>
+
+
+                        <button
+                            type="button"
+                            class="product-btn">
+
+                            View Product →
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="flip-back">
+
+                            ↩ Back
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PRODUCT 3
+            ========================== -->
+
+            <div
+                class="product-card"
+                data-category="Electronics"
+                data-name="Smart Watch">
+
+
+                <div class="product-inner">
+
+
+                    <div class="product-front">
+
+                        <span class="badge blue">
+                            Top Rated
+                        </span>
+
+
+                        <div class="product-image">
+                            ⌚
+                        </div>
+
+
+                        <h3>
+                            Smart Watch
+                        </h3>
+
+
+                        <p>
+                            Electronics
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="flip-btn">
+
+                            ↻ Flip for Price
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-back">
+
+                        <span class="badge blue">
+                            Top Rated
+                        </span>
+
+
+                        <h3>
+                            Smart Watch Pro
+                        </h3>
+
+
+                        <div class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+
+
+                        <p>
+                            Smart fitness watch
+                            with health tracking.
+                        </p>
+
+
+                        <div class="price">
+                            $45.00
+                        </div>
+
+
+                        <small>
+                            Wholesale available
+                        </small>
+
+
+                        <button
+                            type="button"
+                            class="product-btn">
+
+                            View Product →
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="flip-back">
+
+                            ↩ Back
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PRODUCT 4
+            ========================== -->
+
+            <div
+                class="product-card"
+                data-category="Beauty"
+                data-name="Skincare Set">
+
+
+                <div class="product-inner">
+
+
+                    <div class="product-front">
+
+                        <span class="badge pink">
+                            Trending
+                        </span>
+
+
+                        <div class="product-image">
+                            🧴
+                        </div>
+
+
+                        <h3>
+                            Skincare Set
+                        </h3>
+
+
+                        <p>
+                            Beauty
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="flip-btn">
+
+                            ↻ Flip for Price
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-back">
+
+                        <span class="badge pink">
+                            Trending
+                        </span>
+
+
+                        <h3>
+                            Skincare Set
+                        </h3>
+
+
+                        <div class="stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+
+
+                        <p>
+                            Complete skincare collection
+                            for daily use.
+                        </p>
+
+
+                        <div class="price">
+                            $18.99
+                        </div>
+
+
+                        <small>
+                            Wholesale available
+                        </small>
+
+
+                        <button
+                            type="button"
+                            class="product-btn">
+
+                            View Product →
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="flip-back">
+
+                            ↩ Back
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p
+            id="noProducts"
+            class="no-products">
+
+            No products found.
+
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         HOW IT WORKS
+    ========================== -->
+
+    <section
+        class="how-section"
+        id="how-it-works">
+
+
+        <div class="section-heading center">
+
+            <p class="eyebrow">
+                SIMPLE PROCESS
+            </p>
+
+
+            <h2>
+                How COLOMONATI Works
+            </h2>
+
+
+            <p>
+                One platform connecting businesses,
+                marketers and customers.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+
+                <h3>
+                    Join
+                </h3>
+
+
+                <p>
+                    Create an account as a supplier,
+                    marketer or trader.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+
+                <h3>
+                    Explore
+                </h3>
+
+
+                <p>
+                    Discover products and trusted
+                    suppliers.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+
+                <h3>
+                    Promote & Sell
+                </h3>
+
+
+                <p>
+                    Share products, make sales and
+                    grow your business.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+
+                <h3>
+                    Grow
+                </h3>
+
+
+                <p>
+                    Track your sales and commissions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BUSINESS TYPES
+    ========================== -->
+
+    <section
+        class="business-section"
+        id="suppliers">
+
+
+        <div class="business-card">
+
+            <div class="business-icon">
+                🏪
+            </div>
+
+
+            <h2>
+                For Suppliers
+            </h2>
+
+
+            <p>
+                Showcase your products to marketers,
+                traders and customers looking for
+                new business opportunities.
+            </p>
+
+
+            <button type="button">
+                Become a Supplier →
+            </button>
+
+        </div>
+
+
+        <div
+            class="business-card"
+            id="affiliates">
+
+
+            <div class="business-icon">
+                🔗
+            </div>
+
+
+            <h2>
+                For Affiliates & Marketers
+            </h2>
+
+
+            <p>
+                Discover products, promote them and
+                earn commissions from successful sales.
+            </p>
+
+
+            <button type="button">
+                Start Earning →
+            </button>
+
+        </div>
+
+
+        <div class="business-card">
+
+            <div class="business-icon">
+                📦
+            </div>
+
+
+            <h2>
+                For Traders & Resellers
+            </h2>
+
+
+            <p>
+                Find wholesale products and build
+                your own selling business.
+            </p>
+
+
+            <button type="button">
+                Explore Marketplace →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section
+        class="about-section"
+        id="about">
+
+
+        <div>
+
+            <p class="eyebrow">
+                ABOUT COLOMONATI
+            </p>
+
+
+            <h2>
+                Connecting businesses with
+                opportunities.
+            </h2>
+
+        </div>
+
+
+        <p>
+            COLOMONATI is designed to bring suppliers,
+            wholesale businesses, affiliate marketers,
+            traders and resellers together in one
+            marketplace.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER / CONTACT
+    ========================== -->
+
+    <footer id="contact">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <h2>
+                🛍️ COLOMONATI
+            </h2>
+
+
+            <p>
+                Shop. Connect. Grow.
+            </p>
+
+        </div>
+
+
+        <!-- MARKETPLACE -->
+
+        <div>
+
+            <h3>
+                Marketplace
+            </h3>
+
+
+            <a href="#products">
+                Products
+            </a>
+
+
+            <a href="#suppliers">
+                Suppliers
+            </a>
+
+
+            <a href="#affiliates">
+                Affiliates
+            </a>
+
+        </div>
+
+
+        <!-- COMPANY -->
+
+        <div>
+
+            <h3>
+                Company
+            </h3>
+
+
+            <a href="#about">
+                About
+            </a>
+
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+        <!-- JOIN / WHATSAPP -->
+
+        <div>
+
+            <h3>
+                Join COLOMONATI
+            </h3>
+
+
+            <p>
+                Connect with new opportunities.
+            </p>
+
+
+            <button
+                type="button"
+                class="footer-btn">
+
+                Get Started →
+
+            </button>
+
+
+            <a
+                href="https://wa.me/211927712527?text=Hello%20COLOMONATI%2C%20I%20would%20like%20to%20ask%20about%20your%20products."
+                class="home-whatsapp-btn"
+                target="_blank">
+
+                💬 Chat with us on WhatsApp
+
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         COPYRIGHT
+    ========================== -->
+
+    <div class="copyright">
+
+        © 2026 COLOMONATI. All rights reserved.
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
